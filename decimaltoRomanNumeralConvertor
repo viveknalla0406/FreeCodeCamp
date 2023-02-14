@@ -1,0 +1,23 @@
+
+function convertToRoman(num)
+{
+    let refNumbers = [1,4,5,9,10,40,50,90,100,400,500,900,1000];
+    let refSymbols = ["I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"];
+    
+    let index = refNumbers.length;
+    let romanString = "";
+
+    while(num>0) {
+     
+      let currentRefNum = refNumbers[index];
+
+      let valueDiv = Math.floor(num/currentRefNum);
+      num = num%currentRefNum;
+
+      while(valueDiv > 0) {
+          romanString.append(refSymbols[index]);
+          valueDiv--
+      }
+    index--;
+    }
+}
